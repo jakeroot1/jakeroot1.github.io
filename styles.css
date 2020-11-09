@@ -25,11 +25,20 @@ a {
     padding: 30px;
 }
 
-.map {
+.mapholder {
     background-color: #FFF;
     margin: auto;
     overflow: hidden;
     padding: 30px;
+}
+
+#map {
+  background-color: #FFF;
+  margin: auto;
+  overflow: hidden;
+  height: 500px;
+  padding: 30px;
+  padding-top: 30px;
 }
 
 .contactphoto {
@@ -107,9 +116,9 @@ p2{
   background-color: #007acc;
 }
 
-.legend {
+#legend {
   margin: auto;
-  overflow: hidden
+  overflow: hidden;
 	line-height: 0px;
 	background: white;
 	opacity: 0.8;
