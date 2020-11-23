@@ -98,7 +98,7 @@ p2{
   cursor: pointer;
   padding: 10px;
   font-size: 20px;
-  width: 25%;
+  width: 20%;
 }
 
 .tablinkactive {
@@ -109,7 +109,7 @@ p2{
   cursor: pointer;
   padding: 10px;
   font-size: 20px;
-  width: 25%;
+  width: 20%;
 }
 
 .tablink:hover {
