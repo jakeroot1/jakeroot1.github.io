@@ -13,8 +13,8 @@
 		<form action="index.html">
 			<button class="tablink" type="submit">Home</button>
 		</form>
-		<form action="maps.html">
-			<button class="tablink" type="submit">Maps</button>
+		<form action="google_mymaps.html">
+			<button class="tablink" type="submit">Google MyMaps</button>
 		</form>
 		<form action="leaflet_example.html">
 			<button class="tablink" type="submit">Leaflet Maps</button>
@@ -126,18 +126,56 @@
 
 		<div class="mapholder">
 
-			<h2>School Districts in Washington State:</h2>
-
+			<h2>Pierce County Census Tracts by Population:</h2>
 
 		<div id='mapboxmap2'></div>
+		<div class='mapboxmap2-overlay' id='features'><h2>Pierce County Population Information</h2><div id='Population'><p>Hover over a Census Tract.</p></div></div>
+		<div class='mapboxmap2-overlay' id='legend'></div>
+
 			<script>
 			mapboxgl.accessToken = 'pk.eyJ1IjoiamFrZXJvb3QxIiwiYSI6ImNraGNxOXp0cTBibmgyeG1kZ3I5ZmQyNXEifQ.ozY3QJOOnrA6prmZ-Ch11g';
 			var map = new mapboxgl.Map({
 			container: 'mapboxmap2',
-			style: 'mapbox://styles/jakeroot1/ckhcta2i609p91alo5p2ltvem', // stylesheet location
-			center: [-122.4443, 47.2529], // starting position [lng, lat]
-			zoom: 9 // starting zoom
+			style: 'mapbox://styles/jakeroot1/ckhwguxbh186t1as7vnf6fl79', // stylesheet location
+			center: [-122.1295, 47.0676], // starting position [lng, lat]
+			zoom: 8.5 // starting zoom
 			});
+
+			map.on('load', function() {
+				var layers = ['0-1434', '1435-2393', '2394-3831', '3832-6228', '6229-9584'];
+				var colors = ['#6df71d', '#cef532', '#c4c127', '#caaa3f', '#ba6836', '#d90808'];
+
+				for (i = 0; i < layers.length; i++) {
+  			var layer = layers[i];
+  			var color = colors[i];
+  			var item = document.createElement('div');
+  			var key = document.createElement('span');
+  			key.className = 'legend-key';
+  			key.style.backgroundColor = color;
+
+  			var value = document.createElement('span');
+  			value.innerHTML = layer;
+  			item.appendChild(key);
+  			item.appendChild(value);
+  			legend.appendChild(item);
+			}
+
+			map.on('mousemove', function(e) {
+			  var states = map.queryRenderedFeatures(e.point, {
+			    layers: ['2010-census-tracts-shp-ans07a']
+			  });
+
+			  if (states.length > 0) {
+			    document.getElementById('Population').innerHTML = '<h3><strong>' + states[0].properties.Population + '</strong> total people</em></p>';
+			  } else {
+			    document.getElementById('Population').innerHTML = '<p>Hover over a Census Tract.</p>';
+			  }
+			});
+
+			map.getCanvas().style.cursor = 'default';
+
+			});
+
 			</script>
 
 		</script>

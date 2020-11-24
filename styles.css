@@ -48,7 +48,7 @@ a {
     height: 500px;
 }
 
-#map {
+#mapboxpopmap {
   background-color: #FFF;
   margin: auto;
   overflow: hidden;
@@ -123,8 +123,8 @@ p2{
   border: none;
   outline: inherit;
   cursor: pointer;
-  padding: 10px;
-  font-size: 20px;
+  padding: 15px;
+  font-size: 17px;
   width: 20%;
 }
 
@@ -134,8 +134,9 @@ p2{
   float: left;
   border: none;
   cursor: pointer;
-  padding: 10px;
-  font-size: 20px;
+  padding: 15px;
+  font-size: 17px;
+  font-weight: bold;
   width: 20%;
 }
 
@@ -143,11 +144,45 @@ p2{
   background-color: #007acc;
 }
 
-#legend {
+#legend2 {
   margin: auto;
   overflow: hidden;
 	line-height: 0px;
 	background: white;
 	opacity: 0.8;
 	padding:5px 25px 5px 0px;
+}
+
+.map-overlay {
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.8);
+  margin-right: 20px;
+  font-family: Arial, sans-serif;
+  overflow: auto;
+  border-radius: 3px;
+}
+
+#features {
+  top: 0;
+  height: 100px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+#legend {
+  padding: 15px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 18px;
+  height: auto;
+  margin-bottom: 10px;
+  width: auto;
+}
+
+.legend-key {
+  display: inline-block;
+  border-radius: 100%;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
 }
