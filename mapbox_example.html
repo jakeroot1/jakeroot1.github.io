@@ -28,7 +28,7 @@
 
 		<div class="mapholder">
 
-			<h2>An example of a leaflet map:</h2>
+			<h2>Places I have worked:</h2>
 
 
 		<div id='mapboxmap1'></div>
@@ -37,17 +37,96 @@
 			var map = new mapboxgl.Map({
 			container: 'mapboxmap1',
 			style: 'mapbox://styles/jakeroot1/ckhcta2i609p91alo5p2ltvem', // stylesheet location
-			center: [-122.4443, 47.2529], // starting position [lng, lat]
-			zoom: 9 // starting zoom
+			center: [-122.4939, 47.2311], // starting position [lng, lat]
+			zoom: 11 // starting zoom
 			});
-			</script>
 
-		</script>
+			//Custom pop-up
+			var popup = new mapboxgl.Popup()
+					.setHTML('Greetings from the <b>Tacoma Dome</b>');
+
+			var marker = new mapboxgl.Marker()
+				.setLngLat([-122.42695881051179, 47.236669455532805])
+				.setPopup(popup)
+				.addTo(map);
+			//
+
+			//Custom pop-up
+			var popup = new mapboxgl.Popup()
+					.setHTML('Greetings from the <b>Courtyard by Marriott Tacoma Downtown</b>');
+
+			var marker = new mapboxgl.Marker()
+				.setLngLat([-122.43792410928457, 47.24873432642145])
+				.setPopup(popup)
+				.addTo(map);
+			//
+
+			//Custom pop-up
+			var popup = new mapboxgl.Popup()
+					.setHTML('Greetings from <b>Annie Wright Schools</b>');
+
+			var marker = new mapboxgl.Marker()
+				.setLngLat([-122.45947502594309, 47.26866349922143])
+				.setPopup(popup)
+				.addTo(map);
+			//
+
+			//Custom pop-up
+			var popup = new mapboxgl.Popup()
+					.setHTML('Greetings from <b>Charles Wright Academy</b>');
+
+			var marker = new mapboxgl.Marker()
+				.setLngLat([-122.54491798906365, 47.20094218322353])
+				.setPopup(popup)
+				.addTo(map);
+			//
+
+			//Custom pop-up
+			var popup = new mapboxgl.Popup()
+					.setHTML('Greetings from <b>Charles Wright Academy</b>');
+
+			var marker = new mapboxgl.Marker()
+				.setLngLat([-122.54491798906365, 47.20094218322353])
+				.setPopup(popup)
+				.addTo(map);
+			//
+
+			//Custom pop-up
+			var popup = new mapboxgl.Popup()
+					.setHTML('Greetings from <b>Chambers Bay Golf Course</b>');
+
+			var marker = new mapboxgl.Marker()
+				.setLngLat([-122.5707358080452, 47.200332260219234])
+				.setPopup(popup)
+				.addTo(map);
+			//
+
+			//Custom pop-up
+			var popup = new mapboxgl.Popup()
+					.setHTML('Greetings from <b>Sunset Primary School</b>');
+
+			var marker = new mapboxgl.Marker()
+				.setLngLat([-122.56405981862522, 47.215406943929175])
+				.setPopup(popup)
+				.addTo(map);
+			//
+
+			//Custom pop-up
+			var popup = new mapboxgl.Popup()
+					.setHTML('Greetings from the <b>Greater Tacoma Convention and Trade Center</b>');
+
+			var marker = new mapboxgl.Marker()
+				.setLngLat([-122.4391185113424, 47.24855847401789])
+				.setPopup(popup)
+				.addTo(map);
+			//
+
+			</script>
 		</div>
 
 		<div class="mapholder">
 
-			<h2>An example of a leaflet map:</h2>
+			<h2>School Districts in Washington State:</h2>
 
 
 		<div id='mapboxmap2'></div>
