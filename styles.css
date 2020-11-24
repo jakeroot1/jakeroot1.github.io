@@ -32,11 +32,38 @@ a {
     padding: 30px;
 }
 
+#mapboxmap1 {
+    background-color: #FFF;
+    margin: auto;
+    overflow: hidden;
+    padding: 30px;
+    height: 500px;
+}
+
+#mapboxmap2 {
+    background-color: #FFF;
+    margin: auto;
+    overflow: hidden;
+    padding: 30px;
+    height: 500px;
+}
+
 #map {
   background-color: #FFF;
   margin: auto;
   overflow: hidden;
   height: 500px;
+  width: auto;
+  padding: 30px;
+  padding-top: 30px;
+}
+
+#mapholder2 {
+  background-color: #FFF;
+  margin: auto;
+  overflow: hidden;
+  height: 500px;
+  width: auto;
   padding: 30px;
   padding-top: 30px;
 }

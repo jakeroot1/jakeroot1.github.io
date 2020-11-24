@@ -4,6 +4,10 @@
 	<head>
 		<title>Mapbox Example -- jakeroot</title>
 		<link href="styles.css" rel="stylesheet" type="text/css">
+		<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+
 	</head>
 		<h1>Jacob Root: Urban Geographer</h1>
 		<form action="index.html">
@@ -23,7 +27,41 @@
 		</form>
 
 		<div class="mapholder">
-  	</div>
 
+			<h2>An example of a leaflet map:</h2>
+
+
+		<div id='mapboxmap1'></div>
+			<script>
+			mapboxgl.accessToken = 'pk.eyJ1IjoiamFrZXJvb3QxIiwiYSI6ImNraGNxOXp0cTBibmgyeG1kZ3I5ZmQyNXEifQ.ozY3QJOOnrA6prmZ-Ch11g';
+			var map = new mapboxgl.Map({
+			container: 'mapboxmap1',
+			style: 'mapbox://styles/jakeroot1/ckhcta2i609p91alo5p2ltvem', // stylesheet location
+			center: [-122.4443, 47.2529], // starting position [lng, lat]
+			zoom: 9 // starting zoom
+			});
+			</script>
+
+		</script>
+		</div>
+
+		<div class="mapholder">
+
+			<h2>An example of a leaflet map:</h2>
+
+
+		<div id='mapboxmap2'></div>
+			<script>
+			mapboxgl.accessToken = 'pk.eyJ1IjoiamFrZXJvb3QxIiwiYSI6ImNraGNxOXp0cTBibmgyeG1kZ3I5ZmQyNXEifQ.ozY3QJOOnrA6prmZ-Ch11g';
+			var map = new mapboxgl.Map({
+			container: 'mapboxmap2',
+			style: 'mapbox://styles/jakeroot1/ckhcta2i609p91alo5p2ltvem', // stylesheet location
+			center: [-122.4443, 47.2529], // starting position [lng, lat]
+			zoom: 9 // starting zoom
+			});
+			</script>
+
+		</script>
+		</div>
 	</body>
 </html>
