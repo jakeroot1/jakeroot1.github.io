@@ -6,6 +6,8 @@
 		<link href="styles.css" rel="stylesheet" type="text/css">
 		<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
 		<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+		<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
+		<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
 
 
 	</head>
@@ -45,7 +47,10 @@
 			var popup = new mapboxgl.Popup()
 					.setHTML('Greetings from the <b>Tacoma Dome</b>');
 
-			var marker = new mapboxgl.Marker()
+			var el = document.createElement('div');
+			el.className = 'ticketmarker';
+
+			var marker = new mapboxgl.Marker(el)
 				.setLngLat([-122.42695881051179, 47.236669455532805])
 				.setPopup(popup)
 				.addTo(map);
@@ -55,7 +60,10 @@
 			var popup = new mapboxgl.Popup()
 					.setHTML('Greetings from the <b>Courtyard by Marriott Tacoma Downtown</b>');
 
-			var marker = new mapboxgl.Marker()
+			var el = document.createElement('div');
+			el.className = 'hotelmarker';
+
+			var marker = new mapboxgl.Marker(el)
 				.setLngLat([-122.43792410928457, 47.24873432642145])
 				.setPopup(popup)
 				.addTo(map);
@@ -65,7 +73,10 @@
 			var popup = new mapboxgl.Popup()
 					.setHTML('Greetings from <b>Annie Wright Schools</b>');
 
-			var marker = new mapboxgl.Marker()
+			var el = document.createElement('div');
+			el.className = 'schoolmarker';
+
+			var marker = new mapboxgl.Marker(el)
 				.setLngLat([-122.45947502594309, 47.26866349922143])
 				.setPopup(popup)
 				.addTo(map);
@@ -75,17 +86,10 @@
 			var popup = new mapboxgl.Popup()
 					.setHTML('Greetings from <b>Charles Wright Academy</b>');
 
-			var marker = new mapboxgl.Marker()
-				.setLngLat([-122.54491798906365, 47.20094218322353])
-				.setPopup(popup)
-				.addTo(map);
-			//
+			var el = document.createElement('div');
+			el.className = 'schoolmarker';
 
-			//Custom pop-up
-			var popup = new mapboxgl.Popup()
-					.setHTML('Greetings from <b>Charles Wright Academy</b>');
-
-			var marker = new mapboxgl.Marker()
+			var marker = new mapboxgl.Marker(el)
 				.setLngLat([-122.54491798906365, 47.20094218322353])
 				.setPopup(popup)
 				.addTo(map);
@@ -95,7 +99,10 @@
 			var popup = new mapboxgl.Popup()
 					.setHTML('Greetings from <b>Chambers Bay Golf Course</b>');
 
-			var marker = new mapboxgl.Marker()
+			var el = document.createElement('div');
+			el.className = 'golfmarker';
+
+			var marker = new mapboxgl.Marker(el)
 				.setLngLat([-122.5707358080452, 47.200332260219234])
 				.setPopup(popup)
 				.addTo(map);
@@ -105,7 +112,10 @@
 			var popup = new mapboxgl.Popup()
 					.setHTML('Greetings from <b>Sunset Primary School</b>');
 
-			var marker = new mapboxgl.Marker()
+			var el = document.createElement('div');
+			el.className = 'schoolmarker';
+
+			var marker = new mapboxgl.Marker(el)
 				.setLngLat([-122.56405981862522, 47.215406943929175])
 				.setPopup(popup)
 				.addTo(map);
@@ -115,21 +125,31 @@
 			var popup = new mapboxgl.Popup()
 					.setHTML('Greetings from the <b>Greater Tacoma Convention and Trade Center</b>');
 
-			var marker = new mapboxgl.Marker()
+			var el = document.createElement('div');
+			el.className = 'conventionmarker';
+
+			var marker = new mapboxgl.Marker(el)
 				.setLngLat([-122.4391185113424, 47.24855847401789])
 				.setPopup(popup)
 				.addTo(map);
 			//
 
+			map.getCanvas().style.cursor = 'default';
+
 			</script>
+
+			<p>The above map shows all of the places that I have worked in my lifetime. You simply need to click the blue markers to see the name of the location.</p>
+
+			<p>School icon from <i>icon king1</i>; golf icon from <i>Freepik</i>; convention icon from <i>Yazmin Alanis</i>; hotel icon from the noun project; ticket icon from <i>anthony troyce</i>.</p>
+
 		</div>
 
 		<div class="mapholder">
 
-			<h2>Pierce County Census Tracts by Population:</h2>
+			<h2>Pierce County Census Tracts Choropleth Map:</h2>
 
-		<div id='mapboxmap2'></div>
-		<div class='mapboxmap2-overlay' id='features'><h2>Pierce County Population Information</h2><div id='Population'><p>Hover over a Census Tract.</p></div></div>
+		<div id='mapboxmap2'></div><p>Using Census Data from Pierce County's GIS Portal, this map shows the population of each Tract in Pierce County colored based on its population: darker red means greater population, whereas lighter green indicates lower population.</p>
+		<div class='mapboxmap2-overlay' id='features'><div id='Population'><p>Hover over a Census Tract to see the population.</p></div></div>
 		<div class='mapboxmap2-overlay' id='legend'></div>
 
 			<script>
@@ -168,13 +188,26 @@
 			  if (states.length > 0) {
 			    document.getElementById('Population').innerHTML = '<h3><strong>' + states[0].properties.Population + '</strong> total people</em></p>';
 			  } else {
-			    document.getElementById('Population').innerHTML = '<p>Hover over a Census Tract.</p>';
+			    document.getElementById('Population').innerHTML = '<p>Hover over a Census Tract to see the population.</p>';
 			  }
 			});
 
 			map.getCanvas().style.cursor = 'default';
 
 			});
+
+			var geocoder = new MapboxGeocoder({
+  			accessToken: mapboxgl.accessToken,
+  			mapboxgl: mapboxgl,
+  			placeholder: 'Pierce County Location...',
+  			bbox: [-122.849117, 47.07378, -122.375383, 47.403678],
+  			proximity: {
+    			longitude: -122.1295,
+    		latitude: 47.0676
+  			}
+				});
+
+				map.addControl(geocoder);
 
 			</script>
 

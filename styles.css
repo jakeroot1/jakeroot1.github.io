@@ -107,10 +107,10 @@ body, html {
   height: auto;
   background-color: #F8F8FF;
   font-family: "Roboto", sans-serif;
-  margin: 30px;
+  margin: 10px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 900px;
+  max-width: 1000px;
 }
 
 iframe{
@@ -175,7 +175,7 @@ p2{
 
 #features {
   top: 0;
-  height: 100px;
+  height: 40px;
   margin-top: 20px;
   width: 100%;
 }
@@ -195,4 +195,49 @@ p2{
   width: 10px;
   height: 10px;
   margin-right: 5px;
+}
+
+.schoolmarker {
+  background-image: url('icons/school_icon.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.golfmarker {
+  background-image: url('icons/golf_icon.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.ticketmarker {
+  background-image: url('icons/ticket_icon.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.hotelmarker {
+  background-image: url('icons/hotel_icon.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.conventionmarker {
+  background-image: url('icons/convention_icon.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
 }
