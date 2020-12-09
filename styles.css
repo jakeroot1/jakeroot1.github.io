@@ -32,6 +32,22 @@ a {
     padding: 30px;
 }
 
+.tribemapholderleft {
+    background-color: #FFF;
+    margin: auto;
+    overflow: hidden;
+    width: 50%;
+    float: left;
+}
+
+.tribemapholderright {
+    background-color: #FFF;
+    margin: auto;
+    overflow: hidden;
+    width: 50%;
+    float: right;
+}
+
 #map {
     background-color: #FFF;
     margin: auto;
@@ -56,6 +72,20 @@ a {
     height: 500px;
 }
 
+#mapboxmappuyallup {
+    background-color: #FFF;
+    margin: auto;
+    overflow: hidden;
+    height: 700px;
+}
+
+#mapboxmapmakah {
+    background-color: #FFF;
+    margin: auto;
+    overflow: hidden;
+    height: 700px;
+}
+
 #mapboxpopmap {
   background-color: #FFF;
   margin: auto;
@@ -74,6 +104,13 @@ a {
   width: auto;
   padding: 30px;
   padding-top: 30px;
+}
+
+.pagecredits {
+    background-color: #FFF;
+    margin: auto;
+    overflow: hidden;
+    padding: 30px;
 }
 
 .contactphoto {
@@ -235,6 +272,51 @@ p2{
 
 .conventionmarker {
   background-image: url('icons/convention_icon.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.grocerymarker {
+  background-image: url('icons/grocery.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.policemarker {
+  background-image: url('icons/police.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.firestationmarker {
+  background-image: url('icons/fire_station.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.lifecentermarker {
+  background-image: url('icons/life_symbol.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.hospitalmarker {
+  background-image: url('icons/hospital.png');
   background-size: cover;
   width: 30px;
   height: 30px;
