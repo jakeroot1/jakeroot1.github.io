@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	<head>
+		<title>Cemetery Plots -- jakeroot</title>
+		<link href="styles.css" rel="stylesheet" type="text/css">
+		<script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+		<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
+		<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
+
+
+	</head>
+		<h1>Jacob Root: Urban Geographer</h1>
+		<form action="index.html">
+			<button class="tablink" type="submit">Home</button>
+		</form>
+		<form action="cemetery_plots.html">
+			<button class="tablinkactive" type="submit">Cemetery Plots</button>
+		</form>
+		<form action="google_mymaps.html">
+			<button class="tablink" type="submit">Google MyMaps</button>
+		</form>
+		<form action="lab_4.html">
+			<button class="tablink" type="submit">Tribes Comparison</button>
+		</form>
+		<form action="leaflet_example.html">
+			<button class="tablink" type="submit">Leaflet Maps</button>
+		</form>
+		<form action="mapbox_example.html">
+			<button class="tablink" type="submit">Mapbox Maps</button>
+		</form>
+		<form action="about.html">
+			<button class="tablink" type="submit">About & Contact</button>
+		</form>
+
+		<div class="main">
+
+			<h1>Family Burial Plots</h1>
+
+			<p>This page contains a map that will eventually map the location of each cemetery plot in the family. The map currently contains only Tacoma but will eventually contain other cities and states as well.</p>
+
+			<p>The map starts at Tacoma Cemetery but you can pan around and zoom out to see other cemeteries. Each icon represents the person who died.</p>
+
+		</div>
+
+
+	<div class="cemeterymapholder">
+
+		<div id='mapboxmapcemetery'></div>
+			<script>
+			mapboxgl.accessToken = 'pk.eyJ1IjoiamFrZXJvb3QxIiwiYSI6ImNraGNxOXp0cTBibmgyeG1kZ3I5ZmQyNXEifQ.ozY3QJOOnrA6prmZ-Ch11g';
+			var map = new mapboxgl.Map({
+			container: 'mapboxmapcemetery',
+			style: 'mapbox://styles/jakeroot1/ckil0g3d81cew17pp7q96183g', // stylesheet location
+			center: [-122.47845638238825, 47.21203238540296],// starting position [lng, lat]
+			zoom: 16 // starting zoom
+			});
+
+			//Custom pop-up
+			var popup = new mapboxgl.Popup()
+					.setHTML('<b>Margaret Stillwell</b>: 28 July 1923 - 06 Nov 2010');
+
+			var el = document.createElement('div');
+			el.className = 'margaretstillwellmarker';
+
+			var marker = new mapboxgl.Marker(el)
+				.setLngLat([-122.48208596195163, 47.213296991893564])
+				.setPopup(popup)
+				.addTo(map);
+			//
+
+
+			</script>
+
+		</div>
+	</body>
+</html>

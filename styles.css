@@ -48,6 +48,14 @@ a {
     float: right;
 }
 
+.cemeterymapholder {
+    background-color: #FFF;
+    margin: auto;
+    overflow: hidden;
+    width: 100%;
+    float: right;
+}
+
 #map {
     background-color: #FFF;
     margin: auto;
@@ -80,6 +88,13 @@ a {
 }
 
 #mapboxmapmakah {
+    background-color: #FFF;
+    margin: auto;
+    overflow: hidden;
+    height: 700px;
+}
+
+#mapboxmapcemetery {
     background-color: #FFF;
     margin: auto;
     overflow: hidden;
@@ -169,8 +184,8 @@ p2{
   outline: inherit;
   cursor: pointer;
   padding: 15px;
-  font-size: 15px;
-  width: 16.66%;
+  font-size: 12px;
+  width: 14.285%;
   font-family: "Roboto", sans-serif;
 }
 
@@ -181,9 +196,9 @@ p2{
   border: none;
   cursor: pointer;
   padding: 15px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
-  width: 16.66%;
+  width: 14.285%;
   font-family: "Roboto", sans-serif;
 }
 
@@ -320,6 +335,15 @@ p2{
   background-size: cover;
   width: 30px;
   height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.margaretstillwellmarker {
+  background-image: url('icons/maggie_stillwell_02.png');
+  background-size: cover;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   cursor: pointer;
 }
