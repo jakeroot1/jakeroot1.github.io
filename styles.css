@@ -101,6 +101,13 @@ a {
     height: 700px;
 }
 
+#mapboxmapcemetery2 {
+    background-color: #FFF;
+    margin: auto;
+    overflow: hidden;
+    height: 700px;
+}
+
 #mapboxpopmap {
   background-color: #FFF;
   margin: auto;

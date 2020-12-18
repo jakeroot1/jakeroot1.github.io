@@ -36,16 +36,18 @@
 
 		<div class="main">
 
-			<h1>Root, Slater, Campbell, Jorgensen, Stillwell, Anderson, Mathwig Family Burial Plots</h1>
+			<h1>Root, Slater, Campbell, Jorgensen, Stillwell, Anderson, Mathwig, Keasey, and Reid Family Burial Plots</h1>
 
-			<p>This page contains a map that will eventually map the location of each cemetery plot in the family. The map currently contains only Tacoma but will eventually contain other cities and states as well.</p>
+			<p>This page contains maps that will eventually map the location of each cemetery plot in the family (immediate and extended). Each map is a different cemetery.</p>
 
-			<p>The map starts at Tacoma Cemetery but you can pan around and zoom out to see other cemeteries. Each icon represents the person who died.</p>
+			<p>Each symbol picture represents someone who has died; future icons will also show future burial plots.</p>
 
 		</div>
 
 
 	<div class="cemeterymapholder">
+
+		<h2><center>Tacoma Cemetery, Tacoma, Washington</center></h2>
 
 		<div id='mapboxmapcemetery'></div>
 
@@ -117,5 +119,80 @@ inputs[i].onclick = switchLayer;
 			</script>
 
 		</div>
+
+		<div class="cemeterymapholder">
+
+			<h2><center>Beech Grove Cemetery, Muncie, Indiana</center></h2>
+
+			<div id='mapboxmapcemetery2'></div>
+
+			<div id="menu">
+	<input
+	id="streets-v11"
+	type="radio"
+	name="rtoggle"
+	value="streets"
+	checked="checked"
+	/>
+	<label for="streets-v11">streets</label>
+	<input id="light-v10" type="radio" name="rtoggle" value="light" />
+	<label for="light-v10">light</label>
+	<input id="dark-v10" type="radio" name="rtoggle" value="dark" />
+	<label for="dark-v10">dark</label>
+	<input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" />
+	<label for="outdoors-v11">outdoors</label>
+	<input id="satellite-v9" type="radio" name="rtoggle" value="satellite" />
+	<label for="satellite-v9">satellite</label>
+	</div>
+
+				<script>
+				mapboxgl.accessToken = 'pk.eyJ1IjoiamFrZXJvb3QxIiwiYSI6ImNraGNxOXp0cTBibmgyeG1kZ3I5ZmQyNXEifQ.ozY3QJOOnrA6prmZ-Ch11g';
+				var map = new mapboxgl.Map({
+				container: 'mapboxmapcemetery2',
+				style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+				center: [-85.40509369717853, 	40.18794690852846],// starting position [lng, lat]
+				zoom: 15.5 // starting zoom
+				});
+
+				var layerList = document.getElementById('menu');
+	var inputs = layerList.getElementsByTagName('input');
+
+	function switchLayer(layer) {
+	var layerId = layer.target.id;
+	map.setStyle('mapbox://styles/mapbox/' + layerId);
+	}
+
+	for (var i = 0; i < inputs.length; i++) {
+	inputs[i].onclick = switchLayer;
+	}
+
+				//Custom pop-up
+				var popup = new mapboxgl.Popup()
+						.setHTML('<b>Margaret Stillwell</b>: 28 July 1923 - 06 Nov 2010');
+
+				var el = document.createElement('div');
+				el.className = 'margaretstillwellmarker';
+
+				var marker = new mapboxgl.Marker(el)
+					.setLngLat([-122.482197495597, 47.21329752720302])
+					.setPopup(popup)
+					.addTo(map);
+				//
+
+				//Custom pop-up
+				var popup = new mapboxgl.Popup()
+						.setHTML('<b>Walter and Marion Jorgensen</b>: (Walter) 1895 - ?, (Marion) ? - ?');
+
+				var el = document.createElement('div');
+				el.className = 'waltmarionjorgmarker';
+
+				var marker = new mapboxgl.Marker(el)
+					.setLngLat([-122.48201518088446, 47.21311518448041])
+					.setPopup(popup)
+					.addTo(map);
+				//
+				</script>
+
+			</div>
 	</body>
 </html>
